@@ -236,3 +236,31 @@ a.lstrip()
   >
   > ​		(为空)
 
+
+
+
+
+### 字典（第六章）
+
+#### 概念
+
+> java类
+
+#### 定义与基本使用
+
+> dictionary = { 'A' = ' a', 'B' = 2, ······ }
+>
+> print ( dictionary [ 'A' ] )
+>
+> dictionary [ 'new C' ] = 'c'
+>
+> del dictionary [ 'A' ]
+
+* get
+
+  > a_value = dicitionary.get [ 'A' , ' A no value' ]
+
+#### 遍历字典
+
+
+
