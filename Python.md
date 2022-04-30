@@ -262,5 +262,9 @@ a.lstrip()
 
 #### 遍历字典
 
-
+> for key,value in dictionary.items() :
+> for key in dictionary.keys() :
+> for value in dictionary.values() :
+>
+> 
 
