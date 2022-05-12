@@ -1,27 +1,39 @@
 # Python
 
+# 基本使用
 
 
 
+## 小拓展
+
+### import this
+
+### PEP
+
+* Python改进提案 
+
+  即代码规范
+
+  Python Enhancement Proposal，PEP
 
 ## 变量与基本数据类型
 
 ### 字符串
 
-* 大小写
-
 ```python
 "hello 'good' nice"
 'hello "good" nice'
 
-a = "hello"
+a = "hello "
+a += "World"
+# a == "hello World"
 
 a.title()
 a.upper()
 a.lowwer()
 ```
 
-* 变量
+### 变量
 
 ```python
 b="world"
@@ -29,7 +41,7 @@ c=f"{a} {b}"
 print(c.title)
 ```
 
-* 空白
+### 空白
 
 ```python
 \n \t 
@@ -45,25 +57,36 @@ a.lstrip()
 
 * 易读的下划线
 
-  > 1000 = 1_000
+  ```python
+  1000 == 1_000
+  ```
 
 * 同时赋值
 
-  > a , b , c = 0 , 0 , 0 
+  ```python
+  a , b , c = 0 , 0 , 0 
+  ```
 
 * 常量（大写）
 
-  > MAX = 500
+  ```python
+  MAX = 500
+  ```
   
 * 幂次
 
-  > * *
+  ```python
+  2*2*2 == 2 ** 3
+  ```
 
-### 注释
+### 注释 #
 
-> #
+```python
+#
+"""hhh"""
+```
 
-### import this
+
 
 
 
@@ -71,200 +94,435 @@ a.lstrip()
 
 ## 列表
 
+### 定义
+
+```python
+list = [ 'A' , 'B' , 'C' ······ ]
+```
+
 ### 修改 添加 删除
 
 * 访问
+
 * 修改
+
 * 添加
 
-> append
-> insert
+  append
+
+  > v. <正式>附加，增补
+
+  ```python
+  list.append( A )
+  ```
+
+  insert
+
+  ```python
+  list.insert( 0 , A )
+  ```
 
 * 删除
 
-  > del
-  >
-  > pop
+  del
+  
+  ```python
+  del list[0]
+  ```
+
+* 弹出
+
+  pop
+
+  ```python
+  a = list.pop( ) #默认弹出最后一个
+  a = list.pop(0)
+  ```
 
 ### 排序
 
 #### 永久排序
 
-> list.sort 
->
-> > sort(reverse == True)
+```python
+list.sort() 
+list.sort(reverse == True)
+```
 
 #### 临时排序
 
-> sorted(list)
+```python
+sorted(list)
+```
 
 #### 反转
 
-> reverse
+```python
+list.reverse()
+```
 
 #### 列表长度
 
-> len
+```python
+len( list )
+```
+
+### 索引
+
+```python
+list[-1]  #返回倒数第一个元素
+```
 
 
 
 
 
-### 操作列表 （第四章）
+## 操作列表 
 
-#### 遍历
+### 遍历
 
-> <u>for</u> plant in plants:
->
-> 使用缩进跳出循环
+使用缩进跳出循环
 
-#### 创建数值列表
+```python
+for plant in plants:
+	do sth
+```
 
-* range
+### 数值列表
 
-  > range(a,b) 
-  >
-  > > 创建 b-a 个数
-  >
-  > range(a,b,c)
-  >
-  > > for（a ; a<11 ; a += c )
+#### 创建数值列表 range()
 
-* 简单统计
+* 创建 b-a 个数
 
-  > min
-  >
-  > max
-  >
-  > sum
+  ```python
+  range(a,b) 
+  ```
 
-* 列表解析
+* 指定步长
 
-  > ```python
-  > squares = [value**2 for value in range(1, 11)]
-  > print(squares)
-  > ```
-  >
-  > 
+  ```python
+  range(a,b,c) #for（a ; a<11 ; a += c )
+  ```
 
-#### 使用列表的一部分
+#### 简单统计
 
-* 切片
+```python
+min(list)
+max(list)
+sum(list)
+```
 
-  > list[ a : b ]
+#### 列表解析
 
-* 复制列表
+```python
+squares = [value**2 for value in range(1, 11)]
+print(squares)
+```
 
-  > listA = listB[ : ]
+### 使用列表的一部分
 
-#### 元组
+#### 切片
+
+```python
+list[ a : b ]
+```
+
+#### 复制列表
+
+```python
+listA = listB[ : ] 	 #将B复制给A（两个列表）
+listA = listB		#让A指向B（一个列表，两个名字）
+```
+
+### 元组
 
 * 概念
 
-  > Python将不能修改的值称为不可变的
-  >
-  > 而不可变的列表被称为元组 。
-
+  不可变/不可修改的 列表被称为元组 。
+  
 * 定义元组
 
-  > tuple = ( a , b , c ····)
-  >
-  > tuple =   a , b , c ····
-  >
-  > > 元组由 逗号 标识 ，可以不使用圆括号
+  元组由 逗号 标识 ，可以不使用圆括号
+
+  ```python
+  tuple = ( a , b , c ····)
+  tuple =   a , b , c ···· 
+  ```
 
 * 遍历
 
 * 修改元组变量
 
-  > 重新定义
-
-#### PEP
-
-* Python改进提案 
-
-  > Python Enhancement Proposal，PEP
+   重新定义
 
 
 
+## if 
 
-
-### if （第五章）
-
-#### 条件测试
+### 条件检查
 
 * 检查多个条件
 
-  > A and B
-  >
-  > A  or  B
+  ```python
+  A and B
+  A  or  B
+  ```
 
 * 检查特定值是否  包含 在列表中
 
-  > A in listA
+  ```python
+  if A in listA
+  ```
 
 * 检查特定值是否 不包含 在列表中
 
-  > A not in listA
+  ```python
+  if A not in listA
+  ```
 
-#### if语句
+### if语句
 
 * 作用范围
 
-  > 判断缩进（ 同 for ）
+  判断缩进（ 同 for ）
 
 * if-else
 
-  > if balabala:
-  > 		do sth
-  > else baba:
-  > 		do sth
+  ```python
+  if balabala:
+  		do sth
+  else baba:
+  		do sth
+  ```
 
 * if-elif-else
 
-  > elif == else if
+  elif == else if
 
-#### 使用 if 处理列表
+### 使用 if 处理列表
 
 * 确定列表不是空的
 
-  > if list:
-  >
-  > ​		(不为空)
-  >
-  > if not list:
-  >
-  > ​		(为空)
+  ```python
+  if list:(不为空)
+  if not list:(为空)
+  ```
+  
+  
+
+## 字典
+
+### 概念
+
+类似java类
+
+### 定义与基本使用
+
+```python
+dictionary = { 'A' : ' a', 'B' : 2, ······ }
+
+print ( dictionary [ 'A' ] )
+
+dictionary [ 'C' ] = 'c'
+
+del dictionary [ 'A' ]
+```
+
+获取值 get
+
+```python
+a_value = dicitionary.get [ 'A' , ' A no value' ]
+```
+
+### 遍历字典
+
+```python
+for key,value in dictionary.items() :
+for key in dictionary.keys() :
+for value in dictionary.values() :
+```
+
+### 集合 set
+
+不可重复
+
+```python
+set = { 'A' , 'B' , 'C'  ·····}
+for value in set ( dictionary.values() )
+```
+
+### 嵌套
+
+* 列表套字典
+* 字典套列表
+* 字典套字典
 
 
 
+## 输入 和 while
+
+### 输入 input
+
+```python
+Input = input("this is hint: ") 
+```
+
+input 获得的值为字符
+
+将字符转为int
+
+```python
+a = int(Input)
+```
+
+### while
+
+## 函数
+
+### 定义
+
+```python
+def fun1():
+    print("fun1")
+    
+fun1()
+```
+
+### 参数
+
+#### 传参数
+
+可以为 简单变量、列表 
+
+```python
+def fun(Type,Name):
+    print(f"my {Type} is called {Name}")
+    
+fun('dog','buster')
+fun(Name = 'buster',Type = 'dog')
+```
+
+#### 设置默认参数
+
+```python
+def fun(Type ='dog' , Name):
+    print(f"my {Type} is called {Name}")
+    
+fun('slinky')
+fun('horse','pony')
+fun(Type = 'horse',Name = 'pony')
+```
+
+#### 让参数变成可选的
+
+```python
+def get_formatted_name(first_name, last_name, middle_name=''):
+    if middle_name:
+		full_name = f"{first_name} {middle_name} {last_name}"
+    else:
+		full_name = f"{first_name} {last_name}"
+	return full_name.title()
+```
+
+#### 禁止函数修改列表参数
+
+使用 [:] 为列表创建副本
+
+```python
+def fun(list[:])
+	do sth
+```
+
+#### 传递任意数量的参数
+
+* 传递任意数量的实参
+
+  使用 * 创建空元组 
+
+  ```python
+  def fun(*a)
+  	do sth
+  ```
+
+* 传递任意数量的关键字实参
+
+  使用 ** 接收键值对
+
+  ```python
+  def fun(**a)
+  	do sth
+  ```
+
+### 返回值
+
+值：简单变量 字典 列表
+
+### 导入
+
+* 导入其他 .py文件 
+
+  ```python
+  import A.py文件
+  
+  # 使用A文件的a函数
+  A.a()
+  ```
+
+* 导入其他文件的全部函数
+
+  ```python
+  from A import *
+  
+  # 使用A文件的a函数
+  a()
+  ```
+
+* 导入特定的函数
+
+  ```python
+  from A import a
+  from A import a,b,c
+  
+  a()
+  ```
+
+* 起别名
+
+  ```python
+  import A as A_module
+  from A import a as a_fun
+  ```
 
 
-### 字典（第六章）
 
-#### 概念
+## 类
 
-> java类
+class
 
-#### 定义与基本使用
+### 基本使用
 
-> dictionary = { 'A' = ' a', 'B' = 2, ······ }
->
-> print ( dictionary [ 'A' ] )
->
-> dictionary [ 'new C' ] = 'c'
->
-> del dictionary [ 'A' ]
+#### 定义
 
-* get
+_ _ init _ _ == 构造器
+self == this
 
-  > a_value = dicitionary.get [ 'A' , ' A no value' ]
+```python
+class A:
+	def __init__(self,a,b):
+		self.a = a
+		self.b = b
+		self.c = 0 #新定义一个属性
+        
+	def fun1():
+		do sth
+```
 
-#### 遍历字典
+#### 调用
 
-> for key,value in dictionary.items() :
-> for key in dictionary.keys() :
-> for value in dictionary.values() :
->
-> 
+```python
+# 新建一个实例
+my_a = A("a","b")
+
+# 调用方法
+my_a.fun1()
+```
 
