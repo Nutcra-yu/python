@@ -456,7 +456,120 @@ def fun(list[:])
 
 值：简单变量 字典 列表
 
-### 导入
+
+
+## 类
+
+class
+
+### 基本使用
+
+#### 定义
+
+_ _ init _ _ == 构造器
+self == this
+
+```python
+class A:
+	def __init__(self,a,b):
+		self.a = a
+		self.b = b
+		self.c = 0 #新定义一个属性
+        
+	def fun1():
+		do sth
+```
+
+#### 调用
+
+```python
+# 新建一个实例
+my_a = A("a","b")
+
+# 调用方法
+my_a.fun1()
+```
+
+#### 修改属性的值
+
+直接修改
+方法修改
+
+### 继承
+
+
+
+## 文件
+
+### 打开文件
+
+```
+open('file','?') 
+```
+
+`'w'` 	： 写入模式 write
+`'r'`	 ： 读取模式 read
+`'a'`	 ：附加模式 append
+`'r+'`	：读写模式 read + write
+
+### 写入文件
+
+```
+file.write()
+```
+
+### 读取文件
+
+```python
+file.read()
+file.readlines()
+```
+
+### 存储数据
+
+JSON : **J**ava**S**cript**O**bject**N**otation
+
+* ```python
+  import json
+  ```
+
+* 写入 json.dump()
+
+  ```python
+  json.dump(contents,filename)
+  ```
+
+* 读取 json.load()
+
+  ```python
+  contents = json.load(filename)
+  ```
+
+  
+
+
+
+## 异常
+
+如果try正常 执行else `(A+C)`
+如果try异常 执行except `(B)`
+
+```python
+try:
+	do A
+except sth:
+	do B
+else :
+	do C
+```
+
+* pass 
+
+  do nothing 什么都不做
+
+  
+
+## 导入
 
 * 导入其他 .py文件 
 
@@ -492,37 +605,23 @@ def fun(list[:])
   from A import a as a_fun
   ```
 
+* 导入类
 
+  ```python
+  from A_file import A_class
+  ```
 
-## 类
+* 导入文件
 
-class
+  ```python
+  with open(file_name) as name:
+  	contents = name.read()
+  	contents = name.readlines()
+  ```
 
-### 基本使用
+  
 
-#### 定义
+### 标准库 
 
-_ _ init _ _ == 构造器
-self == this
-
-```python
-class A:
-	def __init__(self,a,b):
-		self.a = a
-		self.b = b
-		self.c = 0 #新定义一个属性
-        
-	def fun1():
-		do sth
-```
-
-#### 调用
-
-```python
-# 新建一个实例
-my_a = A("a","b")
-
-# 调用方法
-my_a.fun1()
-```
+自动包含
 
