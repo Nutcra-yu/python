@@ -571,14 +571,16 @@ else :
 
 ## 导入
 
-* 导入其他 .py文件 
+### 导入其他 .py文件 
 
-  ```python
-  import A.py文件
-  
-  # 使用A文件的a函数
-  A.a()
-  ```
+```python
+import A.py文件
+
+# 使用A文件的a函数
+A.a()
+```
+
+### 导入函数
 
 * 导入其他文件的全部函数
 
@@ -598,30 +600,68 @@ else :
   a()
   ```
 
-* 起别名
+### 起别名
 
-  ```python
-  import A as A_module
-  from A import a as a_fun
-  ```
+```python
+import A as A_module
+from A import a as a_fun
+```
 
-* 导入类
+### 导入类
 
-  ```python
-  from A_file import A_class
-  ```
+```python
+from A_file import A_class
+```
 
-* 导入文件
+### 导入文件
 
-  ```python
-  with open(file_name) as name:
-  	contents = name.read()
-  	contents = name.readlines()
-  ```
+```python
+with open(file_name) as name:
+	contents = name.read()
+	contents = name.readlines()
+```
 
-  
+
 
 ### 标准库 
 
 自动包含
 
+
+
+
+
+## 测试代码
+
+> **看不懂**
+>
+> ```
+>  if __name__ == '__main__':
+>  unittest.main()
+> ```
+>
+> ```
+> 我们将直接运行这个文件，但需要指出的是，很多测试框架都会先导入测试文件再运行。导入文件时，解释器将在导入的同时执行它。❹处的if 代码块检查特殊变量__name__ ，这个变量是在程序执行时设置的。如果这个文件作为主程序执行，变量__name__ 将被设置为'__main__' 。在这里，调用unittest.main() 来运行测试用例。如果这个文件被测试框架导入，变量__name__ 的值将不是'__main__' ，因此不会调用unittest.main() 。
+> ```
+
+### 测试函数
+
+* 导入模块 unittest
+* 导入函数
+* 创建 Test(unittest.TestCase) 类
+* 创建方法（test_开头）
+* 调用函数
+* 断言方法
+
+### 测试类
+
+* 导入模块 unittest
+* 导入类
+* 创建 Test(unittest.TestCase) 类
+* 创建方法（test_开头）
+* 调用类（里的方法）
+* 断言方法
+
+### 断言方法
+
+<img src="https://s2.loli.net/2022/05/15/xJmYfPVguGB4W3j.png" alt="image-20220515160355870"  />
