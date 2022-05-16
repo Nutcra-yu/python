@@ -665,3 +665,17 @@ with open(file_name) as name:
 ### 断言方法
 
 <img src="https://s2.loli.net/2022/05/15/xJmYfPVguGB4W3j.png" alt="image-20220515160355870"  />
+
+### setUp方法
+
+在多个test\_函数里面，有可能会重复创建对象
+setUp函数在各个test\_之前被调用，并为之后的测试提供已经创建的对象
+
+
+
+# 外星人
+
+## PyGame
+
+可用于管理图形、动画乃至声音。通过使用Pygame来处理在屏幕上绘制图像 等任务，可将重点放在程序的高级逻辑上。
+
