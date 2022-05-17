@@ -679,3 +679,11 @@ setUp函数在各个test\_之前被调用，并为之后的测试提供已经创
 
 可用于管理图形、动画乃至声音。通过使用Pygame来处理在屏幕上绘制图像 等任务，可将重点放在程序的高级逻辑上。
 
+## 创建窗口
+
+```python
+self.screen = pygame.display.set_mode((1200, 800))
+```
+
+赋给属性self.screen 的对象是一个surface 。在Pygame中，surface是屏幕的一 部分，用于显示游戏元素。在这个游戏中，每个元素（如外星人或飞船）都是一个 surface。display.set_mode() 返回的surface表示整个游戏窗口。激活游戏的 动画循环后，每经过一次循环都将自动重绘这个surface，将用户输入触发的所有变 化都反映出来。
+
