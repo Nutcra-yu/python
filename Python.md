@@ -687,3 +687,9 @@ self.screen = pygame.display.set_mode((1200, 800))
 
 赋给属性self.screen 的对象是一个surface 。在Pygame中，surface是屏幕的一 部分，用于显示游戏元素。在这个游戏中，每个元素（如外星人或飞船）都是一个 surface。display.set_mode() 返回的surface表示整个游戏窗口。激活游戏的 动画循环后，每经过一次循环都将自动重绘这个surface，将用户输入触发的所有变 化都反映出来。
 
+
+
+* 在Pygame中，原点(0, 0)位于屏幕左上角
+* 在 Python中，辅助方法的名称以单个下划线打头
+* 
+
