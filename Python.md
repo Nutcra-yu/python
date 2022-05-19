@@ -687,6 +687,14 @@ self.screen = pygame.display.set_mode((1200, 800))
 
 赋给属性self.screen 的对象是一个surface 。在Pygame中，surface是屏幕的一 部分，用于显示游戏元素。在这个游戏中，每个元素（如外星人或飞船）都是一个 surface。display.set_mode() 返回的surface表示整个游戏窗口。激活游戏的 动画循环后，每经过一次循环都将自动重绘这个surface，将用户输入触发的所有变 化都反映出来。
 
+```python
+self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+self.settings.screen_width = self.screen.get_rect().width
+self.settings.screen_height = self.screen.get_rect().height
+```
+
+创建屏幕时，传入了尺寸(0, 0) 以及参数pygame.FULLSCREEN （见❶）。这让 Pygame生成一个覆盖整个显示器的屏幕。由于无法预先知道屏幕的宽度和高度，要 在创建屏幕后更新这些设置（见❷）：使用屏幕的rect 的属性width 和height 来更新对象settings 。
+
 
 
 * 在Pygame中，原点(0, 0)位于屏幕左上角
